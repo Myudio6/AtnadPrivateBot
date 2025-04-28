@@ -1,21 +1,18 @@
 import telebot
 import random
-
-# توکن رباتت
 import os
+
+# گرفتن توکن از محیط
 TOKEN = os.getenv('BOT_TOKEN')
 
-# استارت ربات
 bot = telebot.TeleBot(TOKEN)
 
 # لیست استیکرها
 stickers = [
-    'CAACAgUAAxkBAAEDq19lpsk1xyz',  # استیکر ۱
-    'CAACAgUAAxkBAAEDq2Blpsk7fgh',  # استیکر ۲
-    # اینجا استیکرهای بیشتری بعداً میتونی اضافه کنی
+    'CAACAgUAAxkBAAEDq19lpsk1xyz',
+    'CAACAgUAAxkBAAEDq2Blpsk7fgh',
 ]
 
-# واکنش به هر پیامی
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
     text = message.text.lower()
@@ -29,5 +26,4 @@ def handle_message(message):
     else:
         bot.send_message(message.chat.id, "دوست دارم قند عسلم!")
 
-# اجرای ربات
 bot.polling()
