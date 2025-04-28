@@ -2,7 +2,8 @@ import telebot
 import random
 
 # توکن رباتت
-TOKEN = '7482224806:AAEIiBJVmH8uF3i83z_X1jomNcuMo5jxAVw'
+import os
+TOKEN = os.getenv('BOT_TOKEN')
 
 # استارت ربات
 bot = telebot.TeleBot(TOKEN)
